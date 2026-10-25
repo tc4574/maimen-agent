@@ -1,0 +1,14 @@
+{
+  "city": "上海",
+  "location": "麦当劳总部",
+  "store_code": "1450398",
+  "budget_cents": 3000,
+  "main_category": "burger",
+  "drink": "no_sugar",
+  "goal": "higher_protein",
+  "min_protein_g": 20,
+  "max_energy_kcal": 650,
+  "use_coupons": true,
+  "reported_gold_card": "unknown",
+  "seed": 17
+}

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maimen-agent"
+version = "0.0.1"
+description = "Offline harness prototype for a conversational card-based meal assistant"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi==0.143.3", "pydantic==2.14.1", "uvicorn==0.54.0"]
+test = ["httpx==0.28.1"]
+mcp = ["mcp==2.3.0", "httpx2==2.13.1", "jsonschema==4.26.0"]
+
+[tool.setuptools.packages.find]
+include = ["maimen*"]
+
+[tool.setuptools.package-data]
+maimen = ["migrations/*.sql"]
+

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#FFC72C"><meta name="description" content="和 McBot 聊聊今天想吃什么。">
+  <title>McBot · 今天也要好好吃饭</title>
+  <link rel="stylesheet" href="styles.css"><script defer src="assets/grok-ball.js"></script><script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#message">跳到输入框</a>
+  <header class="topbar"><a class="brand" href="./" aria-label="McBot 首页"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 31C6 1 20 1 20 29C20 1 34 1 34 31"/></svg></span>McBot<span class="brand-dot"></span></a><span class="header-note">你的麦当劳灵感搭子</span><button class="location" data-action="settings"><span data-icon="pin"></span><span class="location-label">上海 · 龙腾大道餐厅</span><span class="small">自取</span></button></header>
+  <div class="app-shell">
+    <nav class="rail" aria-label="主导航"><button class="active" data-action="home"><span data-icon="chat"></span><span>聊一聊</span></button><button data-action="favorites"><span data-icon="heart"></span><span>我的收藏</span></button><button data-action="history"><span data-icon="clock"></span><span>我的对话</span></button><button class="rail-settings" data-action="settings"><span data-icon="settings"></span><span>偏好设置</span></button></nav>
+    <main id="main">
+      <section class="hero" aria-label="McBot 对话空间">
+        <div class="intro"><span class="hello-tag">HELLO, 麦门同学！</span><h1>今天，想聊点什么？</h1><p>想吃的、好奇的，都可以和我说。</p></div>
+        <div class="character-stage"><span class="doodle star" aria-hidden="true">✳</span><span class="bubble">好好吃饭，<br>我陪你呀！</span><div id="bot" role="img" aria-label="黄色 McBot 动态角色"></div><span class="doodle sparkle" aria-hidden="true">✦</span><span class="stage-ground"></span><button class="character-caption" data-action="greet">McBot <span>在这里</span><i></i></button></div>
+        <div id="status" class="status" role="status">今日你“麦”了吗？</div>
+        <div class="suggestions"><button data-action="new"><span data-icon="spark"></span><strong>最近上新</strong><small>看看新鲜事</small></button><button data-action="recommend"><span data-icon="burger"></span><strong>今天怎么吃</strong><small>给我三套灵感</small></button><button data-action="deals"><span data-icon="ticket"></span><strong>有什么优惠</strong><small>好吃也要划算</small></button></div>
+      </section>
+      <section id="conversation" class="conversation" aria-label="当前对话" hidden></section>
+      <section id="results" class="results" aria-label="推荐餐单" hidden></section>
+      <div id="selection" class="selection" hidden></div>
+      <footer class="composer-wrap"><div id="connection" class="connection">正在连接本机服务…</div><form id="composer"><button type="button" id="voice" class="voice" aria-label="开始语音对话"><span data-icon="mic"></span></button><input id="message" maxlength="500" autocomplete="off" placeholder="和 McBot 说点什么…" aria-label="给 McBot 的消息"><button type="submit" class="send" aria-label="发送消息"><span data-icon="arrow"></span></button></form><div class="composer-foot"><span id="voice-hint">打字或说话，按你的节奏来</span><button id="stop-speech" hidden>停止播报</button><span class="scope">本机体验 · 非麦当劳官方应用</span></div></footer>
+    </main>
+  </div>
+  <dialog id="drawer" aria-labelledby="drawer-title"><div class="drawer-head"><div><span class="eyebrow">McBot 的小口袋</span><h2 id="drawer-title"></h2></div><button id="close-drawer" class="icon-button" aria-label="关闭">×</button></div><div id="drawer-body"></div></dialog>
+  <div id="toast" role="status" hidden></div>
+</body></html>
